@@ -43,5 +43,5 @@ This project is a PWA that incorporates a chatbot with voice recording facility.
 6. You can even record multiple voices and play them back by clicking on the voice message itself. 
 ![Alt text](image-4.png)
 
-##Thanks.
-##Arpit Kaushal - Developer - [My Github](https://github.com/arpit2k2gen)
+## Thanks.
+## Arpit Kaushal - Developer - [My Github](https://github.com/arpit2k2gen)
