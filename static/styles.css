@@ -91,8 +91,9 @@ button {
   align-items: center;
   border: 5px solid #000000;
   border-top: none;
-  padding: 0 0.45rem;
   border-radius: 0px 0 10px 10px;
+  flex-wrap: wrap;
+  width: 29.2rem;
 }
 .icons {
   width: 20px;
@@ -239,4 +240,15 @@ h1:hover {
 h1:hover:before {
   text-shadow: 1px 1px, 2px 2px, 3px 3px, 4px 4px, 5px 5px, 6px 6px, 7px 7px,
     8px 8px, 9px 9px, 10px 10px;
+}
+
+@media screen and (max-width: 485px) {
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .chat-container,
+  .buttons {
+    width: 90vw;
+  }
 }
