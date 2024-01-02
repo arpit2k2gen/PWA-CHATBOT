@@ -1,40 +1,42 @@
-const cacheName = 'chatbot-pwa-cache-v1';
-const filesToCache = [
-  '/',
-  '/index.html',
-  '/path/to/icon.png',
-  '/path/to/icon-512.png',
-  'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css',
-  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css',
-  '/path/to/main.js',  // Make sure to replace this with the actual path
+const CACHE_NAME = "pwa-chatbot-cache-v1";
+const urlsToCache = [
+  "/",
+  "/index.html",
+  "/static/styles.css",
+  "/static/Images/record.png",
+  "/static/Images/stop-button.png",
+  "/static/Images/play.png",
+  "/path/to/other/assets",
 ];
 
-self.addEventListener('install', (event) => {
+self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(cacheName).then((cache) => {
-      return cache.addAll(filesToCache);
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.addAll(urlsToCache);
     })
   );
 });
 
-self.addEventListener('activate', (event) => {
+self.addEventListener("fetch", (event) => {
+  event.respondWith(
+    caches.match(event.request).then((response) => {
+      return response || fetch(event.request);
+    })
+  );
+});
+
+self.addEventListener("activate", (event) => {
+  const cacheWhitelist = [CACHE_NAME];
+
   event.waitUntil(
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames.map((name) => {
-          if (name !== cacheName) {
+          if (cacheWhitelist.indexOf(name) === -1) {
             return caches.delete(name);
           }
         })
       );
-    })
-  );
-});
-
-self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
     })
   );
 });

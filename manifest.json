@@ -1,34 +1,9 @@
 {
-    "name": "ChatBot PWA",
-    "short_name": "ChatBot",
-    "description": "A friendly chatbot with voice recording",
-    "start_url": "/",
-    "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#007BFF",
-    "icons": [
-      {
-        "src": "/path/to/icon.png",
-        "sizes": "192x192",
-        "type": "image/png"
-      },
-      {
-        "src": "/path/to/icon-512.png",
-        "sizes": "512x512",
-        "type": "image/png"
-      }
-    ],
-    "scope": "/",
-    "orientation": "portrait",
-    "prefer_related_applications": false,
-    "related_applications": [],
-    "permissions": [
-      "record",
-      "autoplay"
-    ],
-    "serviceworker": {
-      "src": "D:/PWA Chatbot 2/service-worker.js",
-      "scope": "/"
-    }
-  }
-  
+  "name": "PWA ChatBot Recording",
+  "short_name": "ChatBot",
+  "description": "A chatbot with voice recording functionality",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#007bff"
+}

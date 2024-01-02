@@ -1,0 +1,242 @@
+body {
+  font-family: "Arial", sans-serif;
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* h1 {
+  font-size: 70px;
+  font-weight: 600;
+  background-image: conic-gradient(
+    #553c9a 30%,
+    #ee4b2b 40%,
+    #ee4b2b 70%,
+    #00c2cb 80%,
+    #553c9a
+  );
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+} */
+
+.chat-container {
+  background-image: url("digi.jpg");
+  border: 5px solid #000000;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+  height: 28rem;
+  width: 29.2rem;
+  background: url(./Images/bg.png);
+  background-size: 10rem;
+}
+
+.message {
+  padding: 10px;
+  margin: 0;
+  text-align: left;
+  clear: both;
+}
+
+.user-message {
+  background-color: #007bff;
+  color: #fff;
+  /* border-top-left-radius: 10px; */
+  margin-bottom: 5px;
+  float: right;
+  cursor: pointer;
+  border-radius: 10px;
+  border-top-right-radius: 0px;
+  display: flex;
+  align-items: center;
+}
+
+.user-message:hover {
+  background-color: #0056b3;
+}
+
+.bot-message {
+  background-color: #28a745;
+  color: #fff;
+  /* border-top-right-radius: 10px; */
+  margin-bottom: 5px;
+  float: left;
+  border-radius: 10px;
+  border-top-left-radius: 0px;
+}
+
+button:nth-child(1) {
+  padding: 3px 5px 3px 3px !important;
+}
+button {
+  padding: 10px;
+  font-size: 16px;
+  margin: 5px;
+  cursor: pointer;
+  padding: 3px 5px 1px 1px !important;
+}
+
+#audioPlayer {
+  width: 20%;
+  margin-top: 10px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid #000000;
+  border-top: none;
+  padding: 0 0.45rem;
+  border-radius: 0px 0 10px 10px;
+}
+.icons {
+  width: 20px;
+}
+.icons:nth-child(1) {
+  width: 27px;
+}
+.icons:nth-child(3) {
+  width: 27px;
+}
+#recordButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(13px) saturate(135%);
+  -webkit-backdrop-filter: blur(13px) saturate(135%);
+  background-color: rgba(0, 123, 255, 0.72);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  box-shadow: 0px 3px 8px #aaa, inset 0px 0px 0px #fff;
+}
+#recordButton:hover {
+  backdrop-filter: blur(15px) saturate(135%);
+  -webkit-backdrop-filter: blur(15px) saturate(135%);
+  background-color: rgba(0, 123, 255, 0.48);
+  box-shadow: none;
+}
+#recordButton:active {
+  box-shadow: none;
+}
+.xyz {
+  background-color: #007bff;
+  width: 1rem;
+  margin-bottom: 5px;
+  clip-path: polygon(0 0, 0 35%, 80% 0);
+}
+.chat-messages {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 5px;
+}
+
+.chat-messages:hover > .xyz,
+.chat-messages:hover > .user-message {
+  background-color: #0056b3;
+}
+.chat-messages-1 {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 5px;
+}
+.xyz-2 {
+  background-color: #28a745;
+  width: 1rem;
+  margin-bottom: 5px;
+  clip-path: polygon(100% 0, 100% 35%, 20% 0);
+}
+
+.play-icon {
+  background: url(./Images/play.png);
+  background-size: cover;
+  width: 27px;
+  height: 27px;
+}
+#audioPlayer {
+  display: none;
+}
+#stopButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(15px) saturate(135%);
+  -webkit-backdrop-filter: blur(15px) saturate(135%);
+  background-color: rgba(220, 53, 69, 0.98);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  box-shadow: 0px 3px 8px #aaa, inset 0px 0px 0px #fff;
+}
+#stopButton:hover {
+  backdrop-filter: blur(15px) saturate(135%);
+  -webkit-backdrop-filter: blur(15px) saturate(135%);
+  background-color: rgba(220, 53, 69, 0.78);
+  /* border-radius: 12px; */
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  box-shadow: none;
+}
+#playButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(15px) saturate(135%);
+  -webkit-backdrop-filter: blur(15px) saturate(135%);
+  background-color: rgba(40, 167, 69, 0.98);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  box-shadow: 0px 3px 8px #aaa, inset 0px 0px 0px #fff;
+}
+#playButton:hover {
+  backdrop-filter: blur(15px) saturate(135%);
+  -webkit-backdrop-filter: blur(15px) saturate(135%);
+  background-color: rgba(40, 167, 69, 0.7);
+  /* border-radius: 12px; */
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  box-shadow: none;
+}
+
+h1 {
+  position: relative;
+  font-size: 3.2rem;
+  letter-spacing: 10px;
+  font-family: sans-serif;
+  display: table;
+  margin: 40px auto;
+  cursor: pointer;
+  transition: 0.6s;
+  font-weight: 800;
+}
+h1:before,
+h1:after {
+  content: attr(data-text);
+  transition: 0.6s;
+}
+h1:before {
+  left: 0;
+  top: 0;
+  position: absolute;
+  z-index: -1;
+  text-shadow: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px,
+    0px 0px, 0px 0px, 0px 0px;
+  -webkit-mask: repeating-linear-gradient(
+    45deg,
+    transparent 0 3px,
+    rgba(0, 0, 0, 0.5) 0 6px
+  );
+  mask: repeating-linear-gradient(
+    45deg,
+    transparent 0 3px,
+    rgba(0, 0, 0, 0.5) 0 6px
+  );
+}
+h1:hover {
+  transform: translate(-10px, -10px);
+}
+h1:hover:before {
+  text-shadow: 1px 1px, 2px 2px, 3px 3px, 4px 4px, 5px 5px, 6px 6px, 7px 7px,
+    8px 8px, 9px 9px, 10px 10px;
+}
