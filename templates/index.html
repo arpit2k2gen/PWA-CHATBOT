@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWA ChatBot Recording</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-XXgtrHn4QSSPz3FBA9d6q6t1wqiaWcl1xdz9Zl5Pqvfno6S9RM/aLkY8x7Vy5CdC" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 50px;
+            }
+
+        h1 {
+            font-size: 70px;
+            font-weight: 600;
+            background-image: conic-gradient(#553c9a 30%, #ee4b2b 40%, #ee4b2b 70%, #00c2cb 80%, #553c9a);
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            
+           }
+
+        .chat-container {
+            background-image: url("digi.jpg");
+            max-width: 500px;
+            margin: auto;
+            border: 5px solid #000000;
+            border-radius: 10px;
+            overflow: hidden;
+            }
+
+        .message {
+            padding: 10px;
+            margin: 0;
+            text-align: left;
+            clear: both;
+            }
+
+        .user-message {
+            background-color: #007BFF;
+            color: #fff;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+            margin-bottom: 5px;
+            float: right;
+            cursor: pointer;
+            }
+
+        .user-message:hover {
+            background-color: #0056b3;
+            }
+
+        .bot-message {
+            background-color: #28a745;
+            color: #fff;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            margin-bottom: 5px;
+            float: left;
+            }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+            }
+
+        #audioPlayer {
+            width: 20%;
+            margin-top: 10px;
+            }
+    </style>
+</head>
+<body>
+    <h1>ChatBot PWA</h1>
+    <div class="chat-container">
+        <div class="message user-message">Hello, how can I help you?</div>
+        <div class="message bot-message">I'm a friendly chatbot!</div>
+    </div>
+    <div>
+        <button id="recordButton" class="btn btn-primary">
+            <i class="fas fa-microphone" id="recordingIcon"></i> Record Audio
+        </button>
+        <button id="stopButton" class="btn btn-danger" disabled>Stop Recording</button>
+        <button id="playButton" class="btn btn-success" disabled>Play Recording</button>
+    </div>
+    <audio id="audioPlayer" controls></audio>
+    <div id="recordingDuration"></div>
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
